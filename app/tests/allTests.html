@@ -1,0 +1,58 @@
+<style>
+    table,td,tr,thead,tbody{
+        border:1px solid gray;
+    }
+</style>
+
+<h2>All tests:</h2>
+    
+    
+    <div ng-controller="TestsCtrl as vm">
+        
+        <button ng-click="vm.toggleQuestions()">Toggle questions</button>
+        
+        <table>
+            
+            <thead>
+                <tr>
+                    <td>questions</td>
+                    <td>description</td>
+                    <td>isPublic</td>
+                    <td>startDate</td>
+                    <td>endDate</td>
+                    <td>isHidden</td>
+                    <td>id</td>
+                    <td>createdAt</td>
+                    <td>updatedAt</td>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr ng-repeat="test in vm.mockTests">
+                    <td>
+                        
+                        <span ng-if="!vm.showQuestions">Questions...</span>
+                        
+                        <ul ng-if="vm.showQuestions" ng-repeat="question in test.questions">
+                            <li>{{question.description}}</li>
+                        </ul>
+                    </td>
+                    <td>{{test.description}}</td>
+                    <td>{{test.isPublic}}</td>
+                    <td>{{test.startDate}}</td>
+                    <td>{{test.endDate}}</td>
+                    <td>{{test.isHidden}}</td>
+                    <td>{{test.id}}</td>
+                    <td>{{test.createdAt}}</td>
+                    <td>{{test.updatedAt}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+    </div>
+
+    
+    
+    
+

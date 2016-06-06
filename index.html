@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <title>Testing Management</title>
 </head>
-<body ng-app="testsManagement" ng-controller="TestsCtrl as vm">
+<body ng-app="testsManagement">
     
     
-    <h1>{{2*2+5+vm.testMessage}}</h1>
+    
+    <ng-include src="'app/tests/allTests.html'"></ng-include>
+    
+    
     
     <script src="js/angular.min.js"></script>
     <script src="app/app.js"></script>
