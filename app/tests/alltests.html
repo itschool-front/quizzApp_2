@@ -1,17 +1,16 @@
-<style>
-    table,td,tr,thead,tbody{
-        border:1px solid gray;
-    }
-</style>
+    
+    <div class="row">
 
+    <div class="col-sm-12">
+        
 <h2>All tests:</h2>
     
     
     <div ng-controller="TestsCtrl as vm">
         
-        <button ng-click="vm.toggleQuestions()">Toggle questions</button>
-        
-        <table>
+        <button class="btn btn-default" ng-click="vm.toggleQuestions()">Toggle questions</button>
+                
+        <table class="table">
             
             <thead>
                 <tr>
@@ -28,13 +27,18 @@
             </thead>
             
             <tbody>
-                <tr ng-repeat="test in vm.mockTests">
-                    <td>
-                        
+                <tr ng-repeat="test in vm.allTests">
+                    <td>                        
                         <span ng-if="!vm.showQuestions">Questions...</span>
                         
                         <ul ng-if="vm.showQuestions" ng-repeat="question in test.questions">
-                            <li>{{question.description}}</li>
+                            <li>{{question.description}}
+                                <ul>
+                                    <li ng-repeat="answer in question.answers">
+                                        {{answer.description}}
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </td>
                     <td>{{test.description}}</td>
@@ -51,8 +55,12 @@
         
         
     </div>
-
-    
-    
-    
-
+        
+        
+    </div>        
+        
+        
+        
+        
+    </div>
+  

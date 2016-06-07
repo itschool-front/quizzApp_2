@@ -1,16 +1,59 @@
 (function () {
     'use strict';
     angular.module('testsManagement')
-           .controller('TestsCtrl', TestsCtrl);
+           .controller('TestsCtrl', ['questionsResource', TestsCtrl]);
            
-    function TestsCtrl(){
+    function TestsCtrl(questionsResource){
         var vm =this;
         
         //////////// Interface /////////////////
+        
         vm.toggleQuestions = toggleQuestions;
-              
         vm.showQusetions = false;
+        
        
+        /*  Array of all tests available    */
+        vm.allTests=[];
+        vm.mockTests=[];
+       
+       
+        ///////////// Implementation /////////////
+        
+        function toggleQuestions() {
+              vm.showQuestions = !vm.showQuestions;
+        }
+        
+        
+        function getAlltests() {
+            var tests = questionsResource.all({}, function(){
+                console.log(tests);
+                
+                tests.forEach(function(test){
+                    test.questions.forEach(function(question) {
+                        question.answers = 
+                            questionsResource.answers({id: question.id}, function(){
+                                question.answers = question.answers.answers
+                                console.log(question);
+                            });
+                    });
+                });
+            });
+            
+            return tests;                       
+        }
+
+        ///////////// Constructor /////////////
+
+        vm.allTests = getAlltests();
+        
+
+
+
+
+
+
+     
+       /* Faking HTTP Backend response */
         vm.mockTests = [
         {
             "questions": [],
@@ -244,17 +287,7 @@
         }
       ];
       
-      
-      
-      
-      
-      
-      ///////////// Implementation /////////////
-      
-      function toggleQuestions() {
-            vm.showQuestions = !vm.showQuestions;
-      }
-        
+  
         
     }
     

@@ -1,0 +1,96 @@
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color: azure;
+  color: #2c3e50;
+}
+
+.navbar-brand{
+    display: block;
+    margin-top: -15px;
+}
+
+.jumbo{
+    padding: 200px 0;
+    background-image: linear-gradient(to right, #D1F1FF 38%, #EDFCF9 100%);
+    color: #2c3e50;
+    font-family: 'Oswald', sans-serif; 
+    background: url('../img/background.jpg') no-repeat center;
+    background-size: cover;
+  
+}
+
+.jumbo h1{
+     font-size: 80px;
+     color: azure;
+     
+}
+
+.jumbo-text{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.jumbotron p{
+    font-size: 1.5em;   
+}
+
+
+.navbar-inverse{
+    background-color: #2c3e50;
+    border: none;
+}
+
+.btn-primary{  
+    border-color:  white;
+    background-color: transparent;
+}
+
+.btn-primary:hover{  
+    border-color:  white;
+    background-color: rgba(255,255,255,.3);
+}
+
+
+.btn-danger{
+    background-color:  #ff3300;
+    margin-right: 1em;
+}
+
+
+
+.btn-danger:hover{
+    background-color:  #e62e00;
+    margin-right: 1em;
+}
+
+
+.fa.fa-info-circle.fa-5x{
+    float: left;
+    margin-right: 20px;
+}
+
+
+/*Blinking*/
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+
