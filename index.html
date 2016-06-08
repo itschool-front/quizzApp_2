@@ -9,8 +9,8 @@
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body ng-app="testsManagement">
-    
+<body ng-app="testsManagement" ng-controller="main as vm">
+   
       <nav class="navbar navbar-inverse navbar-fixed-top">
       
       <div class="container">
@@ -32,24 +32,27 @@
         <div id="navbar" class="navbar-collapse collapse">
             
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="">Регистрация</a></li>
-                <li><a ui-sref="alltests">Тесты</a></li>
+                
+                <li><a ng-if="vm.user.isLoggedIn" href="">{{vm.user.email}}</a></li>
+                <li><a ng-if="!vm.user.isLoggedIn" ui-sref="register">Регистрация</a></li>
+                <li><a ng-if="!vm.user.isLoggedIn" ui-sref="login">Вход</a></li>
+                <li><a ng-click="vm.go()">Тесты</a></li>
                 <li><a href="">Настройки</a></li>
             </ul>
  
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-
+      
+      
+         
       
       <div ui-view></div>
 
 
-      <hr>
+ 
 
-      <footer>
-        <p>© 2016 Company, Inc.</p>
-      </footer>
+ 
     </div> <!-- /container -->
 
 
@@ -65,16 +68,20 @@
     <!--Services-->
     <script src="common/services/commonServices.js"></script>
     <script src="common/services/questionsResource.js"></script>
-    
+    <script src="common/services/userAccount.js"></script>
     
     <!--Main module-->
     <script src="app/app.js"></script>
     
+    <!--Plugins-->
     <script src="js/typed.min.js"></script>
     <script src="js/typed.js"></script>
     
  
     <!--Controllers-->
     <script src="app/tests/TestsCtrl.js"></script>
+    <script src="app/login/login.js"></script>
+    <script src="app/register/register.js"></script>
+    <script src="app/tests/available.js"></script>
 </body>
 </html>

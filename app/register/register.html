@@ -1,0 +1,26 @@
+  <div>
+   <form class="form-signin">
+        <h2 class="form-signin-heading">Регистрация</h2>
+        <p>Введите имя, фамилию, e-mail и пароль для того чтобы пройти тест:</p>
+        
+        <label for="inputName" class="sr-only">Имя:</label>
+        <input ng-model="vm.user.firstName" type="text" id="inputFirstName" class="form-control" placeholder="введите ваше имя" required autofocus>
+        
+        <label for="inputSecondName" class="sr-only">Имя:</label>
+        <input ng-model="vm.user.secondName" type="text" id="inputSecondName" class="form-control" placeholder="введите вашу фамилию" required autofocus>
+                
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input ng-model="vm.user.email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input ng-model="vm.user.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        
+        <div class="checkbox">
+        </div>
+        <button ng-click="vm.login()" class="login-button btn btn-default btn-block" type="submit">Регистрация</button>
+        <a ui-sref="welcome" class="login-button btn btn-default btn-block" type="submit">Отмена</a>
+      </form>
+      
+      
+          
+  </div>

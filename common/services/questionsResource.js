@@ -12,7 +12,12 @@
 						method: 'GET',
 						url: appSettings.serverPath + '/test',
 						isArray: true
-					},				
+					},
+					questions: {
+						method: 'GET',
+						url: appSettings.serverPath + '/test/:id',
+						isArray: false
+					},									
 					answers: {
 						method: 'GET',
 						url: appSettings.serverPath + '/question/:id',
@@ -22,7 +27,12 @@
 						method: 'GET',
 						url: appSettings.serverPath + 'question/picture/:id',
 						isArray: false
-					}					
+					},
+					available: {
+						method: 'GET',
+						url: appSettings.serverPath + '/test/available',
+						isArray: true
+					},					
 					
 				});
 		

@@ -1,0 +1,70 @@
+<div class="alert alert-info">
+    <h2>
+        Пройдите тесты:
+    </h2>
+
+    
+</div>
+
+<div class="container all-questions">
+    <div class="row">
+        
+        
+    <div class="col-md-12" ng-repeat="category in vm.allTests">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h2>{{category.description}}</h2>
+                <hr>
+               
+                     <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="question in category.questions">
+                            <h4 class="list-group-item-heading well well-sm">{{$index+1+") "+question.description}}</h4>
+                            
+                            
+                            <div ng-if="question.pictureFd" class="row">
+                             
+                                <div class="col-xs-6 col-md-3">
+                                    <a href="http://itschool.ocr-service.net:1337/question/picture/{{question.id}}" class="thumbnail">
+                                    <img src="http://itschool.ocr-service.net:1337/question/picture/{{question.id}}" alt="...">
+                                    </a>
+                                </div>
+                             
+                             </div>
+                                                
+               
+                    <div ng-if="question.answerType == 'multi'" class="checkbox" ng-repeat="answer in question.answers">
+                        <label>
+                            <input type="checkbox" value="">
+                            {{answer.description}}
+                        </label>
+                    </div>
+                    
+                    <div ng-if="question.answerType == 'single'" class="radio" ng-repeat="answer in question.answers">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            {{answer.description}}
+                        </label>
+                    </div>
+                    
+                    
+                    
+                    
+                    </li>
+                    
+                   </ul>
+                    
+               
+                        
+                 
+                <hr>
+                <a class="btn btn-default" role="button" 
+                    ng-click="vm.toggleTestClass()">Готово!</a>
+            </div>
+        </div>        
+    </div>
+        
+        
+        
+    </div>
+    
+</div>

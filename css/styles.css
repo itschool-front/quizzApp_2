@@ -10,6 +10,19 @@ body {
     margin-top: -15px;
 }
 
+.navbar-inverse .navbar-nav > li > a{
+    color: #ccc;    
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+    color: #fff;    
+}
+
+/*.navbar-inverse .navbar-nav > li:hover{
+    background-color:#11866f;    
+}*/
+
+
 .jumbo{
     padding: 200px 0;
     background-image: linear-gradient(to right, #D1F1FF 38%, #EDFCF9 100%);
@@ -64,9 +77,14 @@ body {
 }
 
 
-.fa.fa-info-circle.fa-5x{
+.fa.fa-info-circle.fa-4x{
     float: left;
     margin-right: 20px;
+}
+
+
+.info p{
+    font-size: 1.5em;
 }
 
 
@@ -93,4 +111,62 @@ body {
     100% { opacity:1; }
 }
 
+
+
+
+/*LOGIN PAGE*/
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #D1F1FF;
+  /*background-image: linear-gradient(to right, #D1F1FF 38%, #EDFCF9 100%);*/
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 40px 15px;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+  
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"],
+.form-signin input[type="text"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 30px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.login-button.btn.btn-default.btn-lg{
+    background-color:  #18bc9c;
+    color: #fff;
+}
+
+.login-button.btn.btn-default.btn-lg:hover {
+    background-color:  #11866f;
+}
 
